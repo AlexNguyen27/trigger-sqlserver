@@ -63,6 +63,8 @@
             this.pHIEUNHAPTableAdapter = new TRIGGER_NGUYENLENGOCTHANH.ds_QLVTTableAdapters.PHIEUNHAPTableAdapter();
             this.tableAdapterManager = new TRIGGER_NGUYENLENGOCTHANH.ds_QLVTTableAdapters.TableAdapterManager();
             this.cTPNTableAdapter = new TRIGGER_NGUYENLENGOCTHANH.ds_QLVTTableAdapters.CTPNTableAdapter();
+            this.vATTUBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.vATTUTableAdapter = new TRIGGER_NGUYENLENGOCTHANH.ds_QLVTTableAdapters.VATTUTableAdapter();
             mAPNLabel = new System.Windows.Forms.Label();
             mAVTLabel = new System.Windows.Forms.Label();
             sOLUONGLabel = new System.Windows.Forms.Label();
@@ -85,6 +87,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.cTPNGridControl)).BeginInit();
             this.contextMenuStrip1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.gridView2)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.vATTUBindingSource)).BeginInit();
             this.SuspendLayout();
             // 
             // mAPNLabel
@@ -213,7 +216,7 @@
             this.panelControl2.Dock = System.Windows.Forms.DockStyle.Left;
             this.panelControl2.Location = new System.Drawing.Point(0, 202);
             this.panelControl2.Name = "panelControl2";
-            this.panelControl2.Size = new System.Drawing.Size(278, 214);
+            this.panelControl2.Size = new System.Drawing.Size(299, 214);
             this.panelControl2.TabIndex = 1;
             // 
             // mAPNTextEdit
@@ -272,9 +275,9 @@
             // 
             this.panelControl3.Controls.Add(this.cTPNGridControl);
             this.panelControl3.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.panelControl3.Location = new System.Drawing.Point(278, 202);
+            this.panelControl3.Location = new System.Drawing.Point(299, 202);
             this.panelControl3.Name = "panelControl3";
-            this.panelControl3.Size = new System.Drawing.Size(409, 214);
+            this.panelControl3.Size = new System.Drawing.Size(388, 214);
             this.panelControl3.TabIndex = 2;
             // 
             // cTPNGridControl
@@ -285,7 +288,7 @@
             this.cTPNGridControl.Location = new System.Drawing.Point(2, 2);
             this.cTPNGridControl.MainView = this.gridView2;
             this.cTPNGridControl.Name = "cTPNGridControl";
-            this.cTPNGridControl.Size = new System.Drawing.Size(405, 210);
+            this.cTPNGridControl.Size = new System.Drawing.Size(384, 210);
             this.cTPNGridControl.TabIndex = 0;
             this.cTPNGridControl.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
             this.gridView2});
@@ -302,6 +305,7 @@
             // 
             // btnThem
             // 
+            this.btnThem.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(255)))), ((int)(((byte)(128)))));
             this.btnThem.Name = "btnThem";
             this.btnThem.Size = new System.Drawing.Size(121, 22);
             this.btnThem.Text = "THÊM";
@@ -309,6 +313,7 @@
             // 
             // btnGhi
             // 
+            this.btnGhi.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(128)))));
             this.btnGhi.Name = "btnGhi";
             this.btnGhi.Size = new System.Drawing.Size(121, 22);
             this.btnGhi.Text = "GHI";
@@ -316,6 +321,7 @@
             // 
             // btnXoa
             // 
+            this.btnXoa.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(128)))));
             this.btnXoa.Name = "btnXoa";
             this.btnXoa.Size = new System.Drawing.Size(121, 22);
             this.btnXoa.Text = "XÓA";
@@ -323,6 +329,7 @@
             // 
             // btnRefresh
             // 
+            this.btnRefresh.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
             this.btnRefresh.Name = "btnRefresh";
             this.btnRefresh.Size = new System.Drawing.Size(121, 22);
             this.btnRefresh.Text = "REFRESH";
@@ -389,6 +396,15 @@
             // 
             this.cTPNTableAdapter.ClearBeforeFill = true;
             // 
+            // vATTUBindingSource
+            // 
+            this.vATTUBindingSource.DataMember = "VATTU";
+            this.vATTUBindingSource.DataSource = this.ds_QLVT;
+            // 
+            // vATTUTableAdapter
+            // 
+            this.vATTUTableAdapter.ClearBeforeFill = true;
+            // 
             // formPhieuNhap
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -419,6 +435,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.cTPNGridControl)).EndInit();
             this.contextMenuStrip1.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.gridView2)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.vATTUBindingSource)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -455,5 +472,7 @@
         private DevExpress.XtraGrid.Columns.GridColumn colMAVT;
         private DevExpress.XtraGrid.Columns.GridColumn colSOLUONG;
         private DevExpress.XtraGrid.Columns.GridColumn colDONGIA;
+        private System.Windows.Forms.BindingSource vATTUBindingSource;
+        private ds_QLVTTableAdapters.VATTUTableAdapter vATTUTableAdapter;
     }
 }

@@ -45,7 +45,6 @@
             this.panelControl2 = new DevExpress.XtraEditors.PanelControl();
             this.txtMAPX = new DevExpress.XtraEditors.TextEdit();
             this.fKCTPXPHIEUXUATBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.txtMAVT = new DevExpress.XtraEditors.TextEdit();
             this.txtSL = new DevExpress.XtraEditors.SpinEdit();
             this.txtDonGia = new DevExpress.XtraEditors.SpinEdit();
             this.panelControl3 = new DevExpress.XtraEditors.PanelControl();
@@ -63,6 +62,7 @@
             this.pHIEUXUATTableAdapter = new TRIGGER_NGUYENLENGOCTHANH.ds_QLVTTableAdapters.PHIEUXUATTableAdapter();
             this.tableAdapterManager = new TRIGGER_NGUYENLENGOCTHANH.ds_QLVTTableAdapters.TableAdapterManager();
             this.cTPXTableAdapter = new TRIGGER_NGUYENLENGOCTHANH.ds_QLVTTableAdapters.CTPXTableAdapter();
+            this.txtMAVT = new DevExpress.XtraEditors.TextEdit();
             mAPXLabel = new System.Windows.Forms.Label();
             mAVTLabel = new System.Windows.Forms.Label();
             sOLUONGLabel = new System.Windows.Forms.Label();
@@ -77,7 +77,6 @@
             this.panelControl2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.txtMAPX.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.fKCTPXPHIEUXUATBindingSource)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.txtMAVT.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtSL.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtDonGia.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.panelControl3)).BeginInit();
@@ -85,6 +84,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.gridControl1)).BeginInit();
             this.contextMenuStrip1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.gridView2)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.txtMAVT.Properties)).BeginInit();
             this.SuspendLayout();
             // 
             // mAPXLabel
@@ -202,10 +202,10 @@
             // 
             // panelControl2
             // 
+            this.panelControl2.Controls.Add(this.txtMAVT);
             this.panelControl2.Controls.Add(mAPXLabel);
             this.panelControl2.Controls.Add(this.txtMAPX);
             this.panelControl2.Controls.Add(mAVTLabel);
-            this.panelControl2.Controls.Add(this.txtMAVT);
             this.panelControl2.Controls.Add(sOLUONGLabel);
             this.panelControl2.Controls.Add(this.txtSL);
             this.panelControl2.Controls.Add(dONGIALabel);
@@ -213,7 +213,7 @@
             this.panelControl2.Dock = System.Windows.Forms.DockStyle.Left;
             this.panelControl2.Location = new System.Drawing.Point(0, 178);
             this.panelControl2.Name = "panelControl2";
-            this.panelControl2.Size = new System.Drawing.Size(248, 202);
+            this.panelControl2.Size = new System.Drawing.Size(270, 202);
             this.panelControl2.TabIndex = 1;
             // 
             // txtMAPX
@@ -229,14 +229,6 @@
             // 
             this.fKCTPXPHIEUXUATBindingSource.DataMember = "FK_CTPX_PHIEUXUAT";
             this.fKCTPXPHIEUXUATBindingSource.DataSource = this.pHIEUXUATBindingSource;
-            // 
-            // txtMAVT
-            // 
-            this.txtMAVT.DataBindings.Add(new System.Windows.Forms.Binding("EditValue", this.fKCTPXPHIEUXUATBindingSource, "MAVT", true));
-            this.txtMAVT.Location = new System.Drawing.Point(107, 78);
-            this.txtMAVT.Name = "txtMAVT";
-            this.txtMAVT.Size = new System.Drawing.Size(100, 20);
-            this.txtMAVT.TabIndex = 3;
             // 
             // txtSL
             // 
@@ -272,9 +264,9 @@
             // 
             this.panelControl3.Controls.Add(this.gridControl1);
             this.panelControl3.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.panelControl3.Location = new System.Drawing.Point(248, 178);
+            this.panelControl3.Location = new System.Drawing.Point(270, 178);
             this.panelControl3.Name = "panelControl3";
-            this.panelControl3.Size = new System.Drawing.Size(397, 202);
+            this.panelControl3.Size = new System.Drawing.Size(375, 202);
             this.panelControl3.TabIndex = 2;
             // 
             // gridControl1
@@ -285,7 +277,7 @@
             this.gridControl1.Location = new System.Drawing.Point(2, 2);
             this.gridControl1.MainView = this.gridView2;
             this.gridControl1.Name = "gridControl1";
-            this.gridControl1.Size = new System.Drawing.Size(393, 198);
+            this.gridControl1.Size = new System.Drawing.Size(371, 198);
             this.gridControl1.TabIndex = 0;
             this.gridControl1.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
             this.gridView2});
@@ -302,6 +294,7 @@
             // 
             // btnThem
             // 
+            this.btnThem.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(255)))), ((int)(((byte)(128)))));
             this.btnThem.Name = "btnThem";
             this.btnThem.Size = new System.Drawing.Size(121, 22);
             this.btnThem.Text = "THÊM";
@@ -309,6 +302,7 @@
             // 
             // btnGhi
             // 
+            this.btnGhi.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(128)))));
             this.btnGhi.Name = "btnGhi";
             this.btnGhi.Size = new System.Drawing.Size(121, 22);
             this.btnGhi.Text = "GHI";
@@ -316,6 +310,7 @@
             // 
             // btnXoa
             // 
+            this.btnXoa.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(128)))));
             this.btnXoa.Name = "btnXoa";
             this.btnXoa.Size = new System.Drawing.Size(121, 22);
             this.btnXoa.Text = "XÓA";
@@ -323,6 +318,7 @@
             // 
             // btnRefresh
             // 
+            this.btnRefresh.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
             this.btnRefresh.Name = "btnRefresh";
             this.btnRefresh.Size = new System.Drawing.Size(121, 22);
             this.btnRefresh.Text = "REFRESH";
@@ -389,6 +385,14 @@
             // 
             this.cTPXTableAdapter.ClearBeforeFill = true;
             // 
+            // txtMAVT
+            // 
+            this.txtMAVT.DataBindings.Add(new System.Windows.Forms.Binding("EditValue", this.fKCTPXPHIEUXUATBindingSource, "MAVT", true));
+            this.txtMAVT.Location = new System.Drawing.Point(107, 78);
+            this.txtMAVT.Name = "txtMAVT";
+            this.txtMAVT.Size = new System.Drawing.Size(100, 20);
+            this.txtMAVT.TabIndex = 8;
+            // 
             // formPhieuXuat
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -411,7 +415,6 @@
             this.panelControl2.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.txtMAPX.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.fKCTPXPHIEUXUATBindingSource)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.txtMAVT.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtSL.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtDonGia.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.panelControl3)).EndInit();
@@ -419,6 +422,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.gridControl1)).EndInit();
             this.contextMenuStrip1.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.gridView2)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.txtMAVT.Properties)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -439,7 +443,6 @@
         private ds_QLVTTableAdapters.CTPXTableAdapter cTPXTableAdapter;
         private System.Windows.Forms.BindingSource fKCTPXPHIEUXUATBindingSource;
         private DevExpress.XtraEditors.TextEdit txtMAPX;
-        private DevExpress.XtraEditors.TextEdit txtMAVT;
         private DevExpress.XtraEditors.SpinEdit txtSL;
         private DevExpress.XtraEditors.SpinEdit txtDonGia;
         private DevExpress.XtraGrid.Columns.GridColumn colMAPX;
@@ -455,5 +458,6 @@
         private DevExpress.XtraGrid.Columns.GridColumn colNGAY;
         private DevExpress.XtraGrid.Columns.GridColumn colHOTENKH;
         private DevExpress.XtraGrid.Columns.GridColumn colMANV;
+        private DevExpress.XtraEditors.TextEdit txtMAVT;
     }
 }
