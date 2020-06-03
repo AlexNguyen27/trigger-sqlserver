@@ -26,8 +26,8 @@ namespace TRIGGER_NGUYENLENGOCTHANH
             this.pHIEUXUATTableAdapter.Fill(this.ds_QLVT.PHIEUXUAT);
             this.cTPXTableAdapter.Fill(this.ds_QLVT.CTPX);
 
-            gridView1.OptionsBehavior.ReadOnly = true;
-            gridView2.OptionsBehavior.ReadOnly = true;
+            //gridView1.OptionsBehavior.ReadOnly = false;
+            //gridView2.OptionsBehavior.ReadOnly = false;
             maVT.DropDownStyle = ComboBoxStyle.DropDownList;
         }
         public Boolean validationInput()
@@ -78,7 +78,7 @@ namespace TRIGGER_NGUYENLENGOCTHANH
                 {
                     if (ex.Message.Contains("CK_CTPX_SOLUONG"))
                     {
-                        MessageBox.Show("Số lượng phải lớn hơn hoặc bằng 0!");
+                        MessageBox.Show("Số lượng phải lớn hơn 0!");
                     }
                     else if (ex.Message.Contains("CK_CTPX_DONGIA"))
                     {
@@ -118,6 +118,27 @@ namespace TRIGGER_NGUYENLENGOCTHANH
         private void BtnThem_Click(object sender, EventArgs e)
         {
             this.fKCTPXPHIEUXUATBindingSource.AddNew();
+        }
+
+        private void BtnThemPX_Click(object sender, EventArgs e)
+        {
+            this.pHIEUXUATBindingSource.AddNew();
+        }
+
+        private void BtnGhiPX_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                pHIEUXUATBindingSource.EndEdit();
+                pHIEUXUATBindingSource.ResetCurrentItem();
+                this.pHIEUXUATTableAdapter.Update(this.ds_QLVT.PHIEUXUAT);
+                MessageBox.Show("Ghi thành công", "Thông báo ", MessageBoxButtons.OK);
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Bạn vui lòng kiểm tra lại thông tin trứơc khi ghi \n" + "Lỗi: " + ex.Message, "Lỗi Ghi!", MessageBoxButtons.OK);
+                return;
+            }
         }
     }
 }

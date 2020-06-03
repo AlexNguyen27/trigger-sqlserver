@@ -27,8 +27,9 @@ namespace TRIGGER_NGUYENLENGOCTHANH
             this.cTPNTableAdapter.Fill(this.ds_QLVT.CTPN);
             this.pHIEUNHAPTableAdapter.Fill(this.ds_QLVT.PHIEUNHAP);
 
-            gridView1.OptionsBehavior.ReadOnly = true;
-            gridView2.OptionsBehavior.ReadOnly = true;
+            //gridView3.OptionsBehavior.ReadOnly = false;
+            //gridView3.OptionsBehavior.Editable = true;
+            //gridView2.OptionsBehavior.ReadOnly = false;
             maVT.DropDownStyle = ComboBoxStyle.DropDownList;
         }
         public Boolean validationInput()
@@ -79,7 +80,7 @@ namespace TRIGGER_NGUYENLENGOCTHANH
                 {
                     if (ex.Message.Contains("CK_CTPN_SOLUONG"))
                     {
-                        MessageBox.Show("Số lượng phải lớn hơn hoặc bằng 0!");
+                        MessageBox.Show("Số lượng phải lớn hơn 0!");
                     }
                     else if (ex.Message.Contains("CK_CTPN_DONGIA"))
                     {
@@ -133,6 +134,27 @@ namespace TRIGGER_NGUYENLENGOCTHANH
             bdsCTPN.CancelEdit();
             this.pHIEUNHAPTableAdapter.Fill(this.ds_QLVT.PHIEUNHAP);
             this.cTPNTableAdapter.Fill(this.ds_QLVT.CTPN);
+        }
+
+        private void SimpleButton1_Click(object sender, EventArgs e)
+        {
+            this.pHIEUNHAPBindingSource.AddNew();
+        }
+
+        private void BtnGhiPN_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                pHIEUNHAPBindingSource.EndEdit();
+                pHIEUNHAPBindingSource.ResetCurrentItem();
+                this.pHIEUNHAPTableAdapter.Update(this.ds_QLVT.PHIEUNHAP);
+                MessageBox.Show("Ghi PN thành công", "Thông báo ", MessageBoxButtons.OK);
+            }
+            catch(Exception ex)
+            {
+                MessageBox.Show("Bạn vui lòng kiểm tra lại thông tin trứơc khi ghi \n" + "Lỗi: " + ex.Message, "Lỗi Ghi!", MessageBoxButtons.OK);
+                return;
+            }
         }
     }
 }

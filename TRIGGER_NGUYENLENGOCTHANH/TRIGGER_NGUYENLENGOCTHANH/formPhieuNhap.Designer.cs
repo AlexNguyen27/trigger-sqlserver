@@ -37,12 +37,13 @@
             this.pHIEUNHAPGridControl = new DevExpress.XtraGrid.GridControl();
             this.pHIEUNHAPBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.ds_QLVT = new TRIGGER_NGUYENLENGOCTHANH.ds_QLVT();
-            this.gridView1 = new DevExpress.XtraGrid.Views.Grid.GridView();
+            this.gridView3 = new DevExpress.XtraGrid.Views.Grid.GridView();
             this.colMAPN1 = new DevExpress.XtraGrid.Columns.GridColumn();
             this.colMASODDH = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.colNGAY = new DevExpress.XtraGrid.Columns.GridColumn();
             this.colMANV = new DevExpress.XtraGrid.Columns.GridColumn();
             this.panelControl2 = new DevExpress.XtraEditors.PanelControl();
+            this.btnGhiPN = new DevExpress.XtraEditors.SimpleButton();
+            this.simpleButton1 = new DevExpress.XtraEditors.SimpleButton();
             this.maVT = new System.Windows.Forms.ComboBox();
             this.bdsCTPN = new System.Windows.Forms.BindingSource(this.components);
             this.vATTUBindingSource = new System.Windows.Forms.BindingSource(this.components);
@@ -65,6 +66,8 @@
             this.tableAdapterManager = new TRIGGER_NGUYENLENGOCTHANH.ds_QLVTTableAdapters.TableAdapterManager();
             this.cTPNTableAdapter = new TRIGGER_NGUYENLENGOCTHANH.ds_QLVTTableAdapters.CTPNTableAdapter();
             this.vATTUTableAdapter = new TRIGGER_NGUYENLENGOCTHANH.ds_QLVTTableAdapters.VATTUTableAdapter();
+            this.sPGETMAVTDDHBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.sP_GET_MAVT_DDHTableAdapter = new TRIGGER_NGUYENLENGOCTHANH.ds_QLVTTableAdapters.SP_GET_MAVT_DDHTableAdapter();
             mAPNLabel = new System.Windows.Forms.Label();
             sOLUONGLabel = new System.Windows.Forms.Label();
             dONGIALabel = new System.Windows.Forms.Label();
@@ -74,7 +77,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.pHIEUNHAPGridControl)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pHIEUNHAPBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.ds_QLVT)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.gridView1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.gridView3)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.panelControl2)).BeginInit();
             this.panelControl2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.bdsCTPN)).BeginInit();
@@ -87,6 +90,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.cTPNGridControl)).BeginInit();
             this.contextMenuStrip1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.gridView2)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.sPGETMAVTDDHBindingSource)).BeginInit();
             this.SuspendLayout();
             // 
             // mAPNLabel
@@ -139,12 +143,12 @@
             this.pHIEUNHAPGridControl.DataSource = this.pHIEUNHAPBindingSource;
             this.pHIEUNHAPGridControl.Dock = System.Windows.Forms.DockStyle.Fill;
             this.pHIEUNHAPGridControl.Location = new System.Drawing.Point(2, 2);
-            this.pHIEUNHAPGridControl.MainView = this.gridView1;
+            this.pHIEUNHAPGridControl.MainView = this.gridView3;
             this.pHIEUNHAPGridControl.Name = "pHIEUNHAPGridControl";
             this.pHIEUNHAPGridControl.Size = new System.Drawing.Size(683, 198);
             this.pHIEUNHAPGridControl.TabIndex = 0;
             this.pHIEUNHAPGridControl.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
-            this.gridView1});
+            this.gridView3});
             // 
             // pHIEUNHAPBindingSource
             // 
@@ -156,22 +160,20 @@
             this.ds_QLVT.DataSetName = "ds_QLVT";
             this.ds_QLVT.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
             // 
-            // gridView1
+            // gridView3
             // 
-            this.gridView1.Columns.AddRange(new DevExpress.XtraGrid.Columns.GridColumn[] {
+            this.gridView3.Columns.AddRange(new DevExpress.XtraGrid.Columns.GridColumn[] {
             this.colMAPN1,
             this.colMASODDH,
-            this.colNGAY,
             this.colMANV});
-            this.gridView1.GridControl = this.pHIEUNHAPGridControl;
-            this.gridView1.Name = "gridView1";
+            this.gridView3.GridControl = this.pHIEUNHAPGridControl;
+            this.gridView3.Name = "gridView3";
             // 
             // colMAPN1
             // 
             this.colMAPN1.Caption = "Mã PN";
             this.colMAPN1.FieldName = "MAPN";
             this.colMAPN1.Name = "colMAPN1";
-            this.colMAPN1.OptionsColumn.ReadOnly = true;
             this.colMAPN1.Visible = true;
             this.colMAPN1.VisibleIndex = 0;
             // 
@@ -180,30 +182,21 @@
             this.colMASODDH.Caption = "Mã số DDH";
             this.colMASODDH.FieldName = "MASODDH";
             this.colMASODDH.Name = "colMASODDH";
-            this.colMASODDH.OptionsColumn.ReadOnly = true;
             this.colMASODDH.Visible = true;
             this.colMASODDH.VisibleIndex = 1;
-            // 
-            // colNGAY
-            // 
-            this.colNGAY.Caption = "Ngày";
-            this.colNGAY.FieldName = "NGAY";
-            this.colNGAY.Name = "colNGAY";
-            this.colNGAY.OptionsColumn.ReadOnly = true;
-            this.colNGAY.Visible = true;
-            this.colNGAY.VisibleIndex = 2;
             // 
             // colMANV
             // 
             this.colMANV.Caption = "Mã NV";
             this.colMANV.FieldName = "MANV";
             this.colMANV.Name = "colMANV";
-            this.colMANV.OptionsColumn.ReadOnly = true;
             this.colMANV.Visible = true;
-            this.colMANV.VisibleIndex = 3;
+            this.colMANV.VisibleIndex = 2;
             // 
             // panelControl2
             // 
+            this.panelControl2.Controls.Add(this.btnGhiPN);
+            this.panelControl2.Controls.Add(this.simpleButton1);
             this.panelControl2.Controls.Add(cmbMaVT);
             this.panelControl2.Controls.Add(this.maVT);
             this.panelControl2.Controls.Add(mAPNLabel);
@@ -217,6 +210,24 @@
             this.panelControl2.Name = "panelControl2";
             this.panelControl2.Size = new System.Drawing.Size(279, 214);
             this.panelControl2.TabIndex = 1;
+            // 
+            // btnGhiPN
+            // 
+            this.btnGhiPN.Location = new System.Drawing.Point(154, 6);
+            this.btnGhiPN.Name = "btnGhiPN";
+            this.btnGhiPN.Size = new System.Drawing.Size(75, 23);
+            this.btnGhiPN.TabIndex = 11;
+            this.btnGhiPN.Text = "Ghi PN";
+            this.btnGhiPN.Click += new System.EventHandler(this.BtnGhiPN_Click);
+            // 
+            // simpleButton1
+            // 
+            this.simpleButton1.Location = new System.Drawing.Point(32, 6);
+            this.simpleButton1.Name = "simpleButton1";
+            this.simpleButton1.Size = new System.Drawing.Size(75, 23);
+            this.simpleButton1.TabIndex = 10;
+            this.simpleButton1.Text = "Thêm PN";
+            this.simpleButton1.Click += new System.EventHandler(this.SimpleButton1_Click);
             // 
             // maVT
             // 
@@ -352,6 +363,8 @@
             this.colDONGIA});
             this.gridView2.GridControl = this.cTPNGridControl;
             this.gridView2.Name = "gridView2";
+            this.gridView2.SortInfo.AddRange(new DevExpress.XtraGrid.Columns.GridColumnSortInfo[] {
+            new DevExpress.XtraGrid.Columns.GridColumnSortInfo(this.colMAVT, DevExpress.Data.ColumnSortOrder.Ascending)});
             // 
             // colMAPN
             // 
@@ -408,6 +421,15 @@
             // 
             this.vATTUTableAdapter.ClearBeforeFill = true;
             // 
+            // sPGETMAVTDDHBindingSource
+            // 
+            this.sPGETMAVTDDHBindingSource.DataMember = "SP_GET_MAVT_DDH";
+            this.sPGETMAVTDDHBindingSource.DataSource = this.ds_QLVT;
+            // 
+            // sP_GET_MAVT_DDHTableAdapter
+            // 
+            this.sP_GET_MAVT_DDHTableAdapter.ClearBeforeFill = true;
+            // 
             // formPhieuNhap
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -424,7 +446,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.pHIEUNHAPGridControl)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pHIEUNHAPBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.ds_QLVT)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.gridView1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.gridView3)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.panelControl2)).EndInit();
             this.panelControl2.ResumeLayout(false);
             this.panelControl2.PerformLayout();
@@ -438,6 +460,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.cTPNGridControl)).EndInit();
             this.contextMenuStrip1.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.gridView2)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.sPGETMAVTDDHBindingSource)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -457,7 +480,7 @@
         private ds_QLVTTableAdapters.PHIEUNHAPTableAdapter pHIEUNHAPTableAdapter;
         private ds_QLVTTableAdapters.TableAdapterManager tableAdapterManager;
         private DevExpress.XtraGrid.GridControl pHIEUNHAPGridControl;
-        private DevExpress.XtraGrid.Views.Grid.GridView gridView1;
+        private DevExpress.XtraGrid.Views.Grid.GridView gridView3;
         private ds_QLVTTableAdapters.CTPNTableAdapter cTPNTableAdapter;
         private System.Windows.Forms.BindingSource bdsCTPN;
         private DevExpress.XtraEditors.TextEdit mAPNTextEdit;
@@ -467,7 +490,6 @@
         private DevExpress.XtraGrid.Views.Grid.GridView gridView2;
         private DevExpress.XtraGrid.Columns.GridColumn colMAPN1;
         private DevExpress.XtraGrid.Columns.GridColumn colMASODDH;
-        private DevExpress.XtraGrid.Columns.GridColumn colNGAY;
         private DevExpress.XtraGrid.Columns.GridColumn colMANV;
         private DevExpress.XtraGrid.Columns.GridColumn colMAPN;
         private DevExpress.XtraGrid.Columns.GridColumn colMAVT;
@@ -476,5 +498,9 @@
         private System.Windows.Forms.BindingSource vATTUBindingSource;
         private ds_QLVTTableAdapters.VATTUTableAdapter vATTUTableAdapter;
         private System.Windows.Forms.ComboBox maVT;
+        private System.Windows.Forms.BindingSource sPGETMAVTDDHBindingSource;
+        private ds_QLVTTableAdapters.SP_GET_MAVT_DDHTableAdapter sP_GET_MAVT_DDHTableAdapter;
+        private DevExpress.XtraEditors.SimpleButton btnGhiPN;
+        private DevExpress.XtraEditors.SimpleButton simpleButton1;
     }
 }

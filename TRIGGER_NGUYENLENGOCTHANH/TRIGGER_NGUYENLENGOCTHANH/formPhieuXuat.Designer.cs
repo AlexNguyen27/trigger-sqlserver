@@ -39,10 +39,11 @@
             this.ds_QLVT = new TRIGGER_NGUYENLENGOCTHANH.ds_QLVT();
             this.gridView1 = new DevExpress.XtraGrid.Views.Grid.GridView();
             this.colMAPX1 = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.colNGAY = new DevExpress.XtraGrid.Columns.GridColumn();
             this.colHOTENKH = new DevExpress.XtraGrid.Columns.GridColumn();
             this.colMANV = new DevExpress.XtraGrid.Columns.GridColumn();
             this.panelControl2 = new DevExpress.XtraEditors.PanelControl();
+            this.btnThemPX = new DevExpress.XtraEditors.SimpleButton();
+            this.btnGhiPX = new DevExpress.XtraEditors.SimpleButton();
             this.maVT = new System.Windows.Forms.ComboBox();
             this.fKCTPXPHIEUXUATBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.vATTUBindingSource = new System.Windows.Forms.BindingSource(this.components);
@@ -160,50 +161,40 @@
             // 
             this.gridView1.Columns.AddRange(new DevExpress.XtraGrid.Columns.GridColumn[] {
             this.colMAPX1,
-            this.colNGAY,
             this.colHOTENKH,
             this.colMANV});
             this.gridView1.GridControl = this.pHIEUXUATGridControl;
             this.gridView1.Name = "gridView1";
+            this.gridView1.OptionsBehavior.AllowAddRows = DevExpress.Utils.DefaultBoolean.True;
             // 
             // colMAPX1
             // 
             this.colMAPX1.Caption = "Mã PX";
             this.colMAPX1.FieldName = "MAPX";
             this.colMAPX1.Name = "colMAPX1";
-            this.colMAPX1.OptionsColumn.ReadOnly = true;
             this.colMAPX1.Visible = true;
             this.colMAPX1.VisibleIndex = 0;
-            // 
-            // colNGAY
-            // 
-            this.colNGAY.Caption = "Ngày";
-            this.colNGAY.FieldName = "NGAY";
-            this.colNGAY.Name = "colNGAY";
-            this.colNGAY.OptionsColumn.ReadOnly = true;
-            this.colNGAY.Visible = true;
-            this.colNGAY.VisibleIndex = 1;
             // 
             // colHOTENKH
             // 
             this.colHOTENKH.Caption = "Họ tên KH";
             this.colHOTENKH.FieldName = "HOTENKH";
             this.colHOTENKH.Name = "colHOTENKH";
-            this.colHOTENKH.OptionsColumn.ReadOnly = true;
             this.colHOTENKH.Visible = true;
-            this.colHOTENKH.VisibleIndex = 2;
+            this.colHOTENKH.VisibleIndex = 1;
             // 
             // colMANV
             // 
             this.colMANV.Caption = "Mã NV";
             this.colMANV.FieldName = "MANV";
             this.colMANV.Name = "colMANV";
-            this.colMANV.OptionsColumn.ReadOnly = true;
             this.colMANV.Visible = true;
-            this.colMANV.VisibleIndex = 3;
+            this.colMANV.VisibleIndex = 2;
             // 
             // panelControl2
             // 
+            this.panelControl2.Controls.Add(this.btnThemPX);
+            this.panelControl2.Controls.Add(this.btnGhiPX);
             this.panelControl2.Controls.Add(this.maVT);
             this.panelControl2.Controls.Add(mAPXLabel);
             this.panelControl2.Controls.Add(this.txtMAPX);
@@ -217,6 +208,24 @@
             this.panelControl2.Name = "panelControl2";
             this.panelControl2.Size = new System.Drawing.Size(264, 192);
             this.panelControl2.TabIndex = 1;
+            // 
+            // btnThemPX
+            // 
+            this.btnThemPX.Location = new System.Drawing.Point(23, 6);
+            this.btnThemPX.Name = "btnThemPX";
+            this.btnThemPX.Size = new System.Drawing.Size(75, 23);
+            this.btnThemPX.TabIndex = 3;
+            this.btnThemPX.Text = "Thêm PX";
+            this.btnThemPX.Click += new System.EventHandler(this.BtnThemPX_Click);
+            // 
+            // btnGhiPX
+            // 
+            this.btnGhiPX.Location = new System.Drawing.Point(158, 6);
+            this.btnGhiPX.Name = "btnGhiPX";
+            this.btnGhiPX.Size = new System.Drawing.Size(75, 23);
+            this.btnGhiPX.TabIndex = 9;
+            this.btnGhiPX.Text = "Ghi PX";
+            this.btnGhiPX.Click += new System.EventHandler(this.BtnGhiPX_Click);
             // 
             // maVT
             // 
@@ -470,11 +479,12 @@
         private System.Windows.Forms.ToolStripMenuItem btnXoa;
         private System.Windows.Forms.ToolStripMenuItem btnRefresh;
         private DevExpress.XtraGrid.Columns.GridColumn colMAPX1;
-        private DevExpress.XtraGrid.Columns.GridColumn colNGAY;
         private DevExpress.XtraGrid.Columns.GridColumn colHOTENKH;
         private DevExpress.XtraGrid.Columns.GridColumn colMANV;
         private System.Windows.Forms.ComboBox maVT;
         private System.Windows.Forms.BindingSource vATTUBindingSource;
         private ds_QLVTTableAdapters.VATTUTableAdapter vATTUTableAdapter;
+        private DevExpress.XtraEditors.SimpleButton btnThemPX;
+        private DevExpress.XtraEditors.SimpleButton btnGhiPX;
     }
 }
